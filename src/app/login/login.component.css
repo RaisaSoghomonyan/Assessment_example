@@ -1,0 +1,48 @@
+.container-login100 {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #e1e3f3;
+}
+
+
+
+.wrap-login100 {
+  width: 500px;
+  background: #fff;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+
+}
+
+.login100-form {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px 50px 50px 50px;
+}
+
+
+
+.example-full-width {
+  width: 100%;
+}
+
+.blockDisp {
+  display: block;
+}

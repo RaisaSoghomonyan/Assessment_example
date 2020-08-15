@@ -1,0 +1,23 @@
+<div>
+  <button mat-raised-button color="primary" (click)="logout()">Logout</button>
+</div>
+
+<table>
+  <tr>
+    <th *ngFor="let col of displayedColumns;">{{col}}</th>
+  </tr>
+  <tr *ngFor="let project of projects;" [appHighlight] = "['#b1b1b1']" [routerLink]="['project', project.id]">
+    <td>{{project.id}}</td>
+    <td>{{project.name | emoji}}</td>
+  </tr>
+</table>
+
+<div>
+  <button mat-raised-button color="primary" routerLink="newProject" routerLinkActive #rla="routerLinkActive" [disabled]="rla.isActive">Add New</button>
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+

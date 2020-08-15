@@ -1,0 +1,46 @@
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <form class="login100-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+					<span>
+						Account Login
+					</span>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="User name" formControlName="userName">
+        </mat-form-field>
+        <mat-error *ngIf="isErrorState(userName) && userName.hasError('minlength') && !userName.hasError('required') && !userName.hasError('restrictedUserName')">
+          User name must have more than 6 symbols, but you enter {{userName.errors.minlength.actualLength}}
+        </mat-error>
+        <mat-error *ngIf="isErrorState(userName) && userName.hasError('required')">
+          User name is required
+        </mat-error>
+        <mat-error *ngIf="isErrorState(userName) && userName.hasError('restrictedUserName')">
+          User name is restricted
+        </mat-error>
+
+        <div class="blockDisp">
+        <mat-form-field class="example-full-width">
+         <!-- <mat-label>Password</mat-label> -->
+          <input matInput placeholder="Password" formControlName="password" type="password">
+        </mat-form-field>
+        <mat-error *ngIf="isErrorState(password) && password.hasError('minlength') && !password.hasError('required')">
+          Password must have more than 6 symbols, but you enter {{password.errors.minlength.actualLength}}
+        </mat-error>
+        <mat-error *ngIf="isErrorState(password) && password.hasError('required')">
+          Password is required
+        </mat-error>
+        </div>
+
+        <div class="blockDisp">
+          <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Sign in</button>
+        </div>
+
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+

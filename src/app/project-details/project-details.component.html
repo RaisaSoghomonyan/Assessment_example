@@ -1,0 +1,40 @@
+<form class="login100-form" [formGroup]="projectForm" (ngSubmit)="updateProject()">
+
+  <div>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Project ID" [value] = "project.id" readonly>
+  </mat-form-field>
+  </div>
+  <div >
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Project name" formControlName="projectName">
+  </mat-form-field>
+  <mat-error *ngIf="isErrorState(projectName) && projectName.hasError('uniqueProjectName') && !projectName.hasError('required') ">
+    Project name must be unique.
+  </mat-error>
+  <mat-error *ngIf="isErrorState(projectName) && projectName.hasError('required')">
+    Project name is required.
+  </mat-error>
+  </div>
+
+  <div>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Project Description" formControlName="projectDescription">
+  </mat-form-field>
+  </div>
+
+  <div>
+    <span>
+      <button mat-raised-button color="primary" [disabled]="projectForm.invalid || !projectForm.dirty">Save</button>
+    </span>
+
+    <span>
+      <button mat-raised-button color="primary" routerLink="/home" (click)="deleteProject()">Delete</button>
+    </span>
+
+    <span>
+      <button mat-raised-button color="primary" routerLink="/home">Close</button>
+    </span>
+  </div>
+
+</form>
